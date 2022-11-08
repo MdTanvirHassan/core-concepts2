@@ -33,12 +33,12 @@ const addOnHandler = (event)=>{
 
     return (
         <div>
-            <div className="textArea">
+            <div className={`textArea text-${props.mode==='dark'?'light':'dark'}`}>
                 
                 
-                <div className="container">
+                <div className={`container text-${props.mode==='dark'?'light':'dark'}`}>
                         <h1>{props.heading}</h1>
-                        <textarea name="form-control my-1" id="myBox" value={text} onChange={addOnHandler} cols="150" rows="10" placeholder='Enter Your Text Here'></textarea>
+                        <textarea name="form-control my-1" id="myBox" value={text} onChange={addOnHandler} cols="150" rows="10" placeholder='Enter Your Text Here' className={`text-${props.mode==='dark'?'light':'dark'}`} style={{ backgroundColor:props.mode==='dark'?'lightgray':'white'}}></textarea>
                         <button onClick={addUpHandler} className='btn btn-success me-2'>Convert to UpperCase</button>
                         <button onClick={addLowHandler} className='btn btn-primary me-2'>Convert to LowerCase</button>
                         <button onClick={addClearHandler} className='btn btn-warning me-2'>Clear Text</button>
@@ -51,7 +51,7 @@ const addOnHandler = (event)=>{
                     <p>{text.split(" ").length} words and {text.length} characters.</p>
                     <p>{.008 * text.split(" ").length } minutes need to read.</p>
                     <h2>Preview</h2>
-                    <p>{text}</p>
+                    <p>{text.length>0?text:'Enter text to preview'}</p>
                 </div>
 
             </div>
