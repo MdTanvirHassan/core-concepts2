@@ -7,25 +7,30 @@ const Context = (props) => {
 const addUpHandler =()=>{
     let newText= text.toUpperCase(text);
     setText(newText);
+    props.showAlert("convert to uppercase","success");
 }
 
 const addLowHandler =()=>{
     let newText= text.toLowerCase(text);
     setText(newText);
+    props.showAlert("convert to Lowercase","success");
 }
 const addClearHandler =()=>{
     let newText= '';
     setText(newText);
+    props.showAlert("clear text","success");
 }
 
 const handleCopy=()=>{
     var text= document.getElementById('myBox');
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("copied text","success");
 }
 const handleExtraSpace=()=>{
     let newText = text.split(/[ ]+/);
     setText(newText.join(' '));
+    props.showAlert("remove extra space","success");
 }
 const addOnHandler = (event)=>{
     setText(event.target.value);       
