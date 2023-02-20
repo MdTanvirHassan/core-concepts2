@@ -52,7 +52,7 @@ const Context = (props) => {
             cols="150"
             rows="10"
             placeholder="Enter Your Text Here"
-            className={`text-${props.mode === "dark" ? "light" : "dark"}`}
+            className={`text-${props.mode === "dark" ? "dark" : "dark"}`}
             style={{
               backgroundColor: props.mode === "dark" ? "lightgray" : "white",
             }}></textarea>
